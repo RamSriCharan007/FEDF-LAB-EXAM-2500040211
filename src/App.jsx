@@ -4,11 +4,13 @@
 //import heroImg from './assets/hero.png'
 //import './App.css'
 
+import NavBar from './Exam/NavBar'
+
 function App() {
-  
+
   return (
     <div>
-
+      <NavBar/>
     </div>
   )
 }
