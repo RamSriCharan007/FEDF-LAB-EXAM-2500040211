@@ -6,7 +6,7 @@ const Registration = () => {
     name: '', 
     product:'',
     quantity: '', 
-    password: '' 
+    phonenumber: '' 
   });
 
   const handleRegister = (e) => {
@@ -30,7 +30,7 @@ const Registration = () => {
             onChange={e => setFormData({...formData, name: e.target.value})} />
         </div>
         <div>
-            <label>Product</label>
+            <label>Product Name</label>
             <input type="text" value={formData.product} required
             onChange={e => setFormData({...formData,product: e.target.value})} />
         </div>
@@ -42,9 +42,9 @@ const Registration = () => {
         </div>
 
         <div className="mb-3">
-          <label>Password</label>
-          <input type="password" className="form-control" value={formData.password} required
-            onChange={e => setFormData({...formData, password: e.target.value})} />
+          <label>Phone Number</label>
+          <input type="tel" className="form-control" value={formData.phonenumber} required
+            onChange={e => setFormData({...formData, phonenumber: e.target.value})} />
         </div>
 
         <button className="btn btn-primary w-100 mt-2">Register Now</button>
