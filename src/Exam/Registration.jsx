@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import "./Registration.css"
 
 const Registration = () => {
   const [formData, setFormData] = useState({ 
     name: '', 
-    id:'',
-    email: '', 
-    gender: '',
+    product:'',
+    quantity: '', 
     password: '' 
   });
 
   const handleRegister = (e) => {
     e.preventDefault();
-    const existingUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+    const existingUsers = JSON.parse(localStorage.getItem('Product') || '[]');
     
     // Add new user to the array
-    localStorage.setItem('registeredUsers', JSON.stringify([...existingUsers, formData]));
+    localStorage.setItem('Product', JSON.stringify([...existingUsers, formData]));
     
     alert('User Registered Successfully!');
-    setFormData({ name: '',id:'', email: '', gender: '', password: '' }); // Clear form
+    setFormData({ name: '',product:'', email: '', gender: '', password: '' }); // Clear form
   };
 
   return (
@@ -30,26 +30,15 @@ const Registration = () => {
             onChange={e => setFormData({...formData, name: e.target.value})} />
         </div>
         <div>
-            <label>ID</label>
-            <input type="text" value={formData.id} required
-            onChange={e => setFormData({...formData,id: e.target.value})} />
+            <label>Product</label>
+            <input type="text" value={formData.product} required
+            onChange={e => setFormData({...formData,product: e.target.value})} />
         </div>
         
         <div className="mb-3">
-          <label>Email Address</label>
-          <input type="email" className="form-control" value={formData.email} required
-            onChange={e => setFormData({...formData, email: e.target.value})} />
-        </div>
-
-        <div className="mb-3">
-          <label>Gender</label>
-          <select className="form-select" value={formData.gender} required
-            onChange={e => setFormData({...formData, gender: e.target.value})}>
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select>
+          <label>Quantity</label>
+          <input type="number" className="form-control" value={formData.quantity} required
+            onChange={e => setFormData({...formData, quantity: e.target.value})} />
         </div>
 
         <div className="mb-3">

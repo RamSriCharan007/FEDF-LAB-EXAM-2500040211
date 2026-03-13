@@ -30,12 +30,12 @@ const ProductList = () => {
               </tr>
             </thead>
             <tbody>
-              {localUsers.map((u, index) => (
+              {localUsers.map((company, index) => (
                 <tr key={index}>
-                  <td>{u.name}</td>
-                  <td>{u.id}</td>
-                  <td>{u.email}</td>
-                  <td>{u.gender}</td>
+                  <td>{company.name}</td>
+                  <td>{company.id}</td>
+                  <td>{company.email}</td>
+                  <td>{company.gender}</td>
                 </tr>
               ))}
             </tbody>

@@ -32,13 +32,13 @@ export default function APIDemo() {
                 <th>Domain</th>
             </tr>
             {
-                 data.map((user,index) => (
+                 data.map((company,index) => (
                     <tr key={index}>
-                        <td>{user.id}</td>
-                        <td>{user.name}</td>
-                        <td>{user.address}</td>
-                        <td>{user.industry}</td>
-                        <td>{user.domain}</td>
+                        <td>{company.id}</td>
+                        <td>{company.name}</td>
+                        <td>{company.address}</td>
+                        <td>{company.industry}</td>
+                        <td>{company.domain}</td>
                     </tr>
                     
                  ))
